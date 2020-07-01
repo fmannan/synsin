@@ -87,6 +87,11 @@ RUN apt-get update && \
     libopenexr-dev \
     libsm6 libxext6 libxrender-dev
 
+# youtube-dl for downloading realestate10k
+RUN wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl && \
+    chmod a+rx /usr/local/bin/youtube-dl
+
+# python distribution
 RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/anaconda.sh && \
     /bin/bash ~/anaconda.sh -b -p /opt/conda && rm ~/anaconda.sh && chmod 777 -R /opt/conda
 
