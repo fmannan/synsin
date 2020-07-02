@@ -12,7 +12,7 @@ mkdir -p ${DATA_ROOT}/test_vid
 find ${DATA_ROOT}/test -name "*.txt" -exec head -n 1 {} \; > ${DATA_ROOT}/test_vid/test_vid.txt
 
 cd ${DATA_ROOT}/train_vid
-youtube-dl --batch-file train_vid.txt --id
+youtube-dl -i --batch-file train_vid.txt --id
 
 cd ${DATA_ROOT}/test_vid
-youtube-dl --batch-file test_vid.txt --id
+youtube-dl -i --batch-file test_vid.txt --id
